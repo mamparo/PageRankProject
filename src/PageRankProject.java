@@ -6,7 +6,7 @@ public class PageRankProject {
     public static void main(String [] args){
 
         System.out.print("Thank you lord gaben");
-
+        System.out.println("Yo");
     }
 
 }
