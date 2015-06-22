@@ -7,7 +7,7 @@ public class PageRankProject {
 
         System.out.print("Thank you lord gaben");
         System.out.println("Yo");
-        //Goddammit
+        //Goddammit Janet
         System.out.print("POO");
     }
 
