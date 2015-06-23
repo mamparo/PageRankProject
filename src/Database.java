@@ -9,6 +9,8 @@ import java.util.Scanner;
  */
 public class Database
 {
+    int numOfDocuments;
+
     private String[] words;
 
     /**
@@ -20,6 +22,7 @@ public class Database
      */
     public Database() throws Exception
     {
+        numOfDocuments = 0;
         words = new String[1000];
         File file = new File("src/englishwords.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -40,6 +43,7 @@ public class Database
      */
     public void generateTextFile(int docNumber, int count) throws Exception
     {
+        numOfDocuments = docNumber;
         String fileName = "src/files/doc" + String.valueOf(docNumber+1) + ".txt";
         PrintWriter writer = new PrintWriter(new File(fileName));
 
@@ -48,6 +52,11 @@ public class Database
             writer.println(chooseRandomWord());
         }
         writer.close();
+    }
+
+    public int getNumOfDocuments()
+    {
+        return numOfDocuments;
     }
 
     /**

@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -16,12 +17,18 @@ public class PageRankProject {
 
         //creates a new Database
         Database d = new Database();
-        d.createDatabase();
+        //d.createDatabase();
+        //int amountOfFiles = d.getNumOfDocuments();
 
         String[] keywords = pRP.getKeywordsFromUser();
-        File file = pRP.getFile(1);
         DecimalFormat df = new DecimalFormat("#.####");
-        System.out.println(df.format(pRP.getPercentage(keywords, file)));
+
+        for (int i = 0; i < 1; i++)
+        {
+            //File file = pRP.getFile(i);
+            File file = new File("src/files/doc1.txt");
+            System.out.println(df.format(pRP.getPercentage(keywords, file)));
+        }
     }
 
     public String[] getKeywordsFromUser()
@@ -69,7 +76,8 @@ public class PageRankProject {
                     occurrences++;
             }
         }
-
+        System.out.println(x);
+        System.out.println(occurrences);
         return (((double)occurrences/x)*100);
     }
 
@@ -81,7 +89,7 @@ public class PageRankProject {
      */
     public File getFile(int number)
     {
-        String pathName = "src/files/doc" + String.valueOf(number) + ".txt";
+        String pathName = "src/files/doc" + String.valueOf(number+1) + ".txt";
         File file = new File(pathName);
         return file;
     }
